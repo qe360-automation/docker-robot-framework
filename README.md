@@ -20,6 +20,7 @@ The versions used are:
 * [Robot Framework DatabaseLibrary](https://github.com/franz-see/Robotframework-Database-Library) 1.2.4
 * [Robot Framework Datadriver](https://github.com/Snooz82/robotframework-datadriver) 1.8.1
 * [Robot Framework DateTimeTZ](https://github.com/testautomation/DateTimeTZ) 1.0.6
+* [Robot Framework DocTest Library](https://github.com/manykarim/robotframework-doctestlibrary) 0.18.0
 * [Robot Framework Faker](https://github.com/guykisel/robotframework-faker) 5.0.0
 * [Robot Framework FTPLibrary](https://github.com/kowalpy/Robot-Framework-FTP-Library) 1.9
 * [Robot Framework IMAPLibrary 2](https://pypi.org/project/robotframework-imaplibrary2/) 0.4.6
@@ -30,7 +31,6 @@ The versions used are:
 * [Axe Selenium Library](https://github.com/mozilla-services/axe-selenium-python) 2.1.6
 * Firefox 114.0
 * Chromium 114.0
-* [Amazon AWS CLI](https://pypi.org/project/awscli/) 1.27.157
 
 As stated by [the official GitHub project](https://github.com/robotframework/Selenium2Library), starting from version 3.0, Selenium2Library is renamed to SeleniumLibrary and this project exists mainly to help with transitioning. The Selenium2Library 3.0.0 is also the last release and for new releases, please look at the [SeleniumLibrary](https://github.com/robotframework/SeleniumLibrary) project.
 
@@ -178,17 +178,6 @@ It can simply be passed during the execution, such as:
         ppodgorsek/robot-framework:latest
 
 By default, the test run ID is empty.
-
-### Upload test reports to an AWS S3 bucket
-
-To upload the report of a test run to an S3 bucket, you need to define the following environment variables:
-    
-    docker run \
-        -e AWS_ACCESS_KEY_ID=<your AWS key> \
-        -e AWS_SECRET_ACCESS_KEY=<your AWS secret> \
-        -e AWS_DEFAULT_REGION=<your AWS region e.g. eu-central-1> \
-        -e AWS_BUCKET_NAME=<name of your S3 bucket> \
-        ppodgorsek/robot-framework:latest
 
 ## Testing this project
 
