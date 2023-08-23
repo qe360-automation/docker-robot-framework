@@ -1,0 +1,18 @@
+name: Build and Publish Robot Framework Docker Image
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Publish Docker Image
+    steps:
+    - uses: actions/checkout@v3
+    - name: Log into registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u qe360-test --password-stdin
+    - name: Build the Docker image
+      run: docker build --tag ghcr.io/qe360-automation/docker-robot-framework:latest .
+    - name: Push the Docker image
+      run: docker push ghcr.io/qe360-automation/docker-robot-framework:latest
