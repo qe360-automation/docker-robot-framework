@@ -41,6 +41,7 @@ ENV FTP_LIBRARY_VERSION 1.9
 ENV GECKO_DRIVER_VERSION v0.33.0
 ENV IMAP_LIBRARY_VERSION 0.4.6
 ENV PABOT_VERSION 2.16.0
+ENV PERCY_VERSION 1.1.0
 ENV REQUESTS_VERSION 0.9.5
 ENV ROBOT_FRAMEWORK_VERSION 6.1
 ENV SELENIUM_LIBRARY_VERSION 6.1.0
@@ -72,6 +73,7 @@ RUN mv /usr/lib64/chromium-browser/chromium-browser /usr/lib64/chromium-browser/
 # Install Robot Framework and associated libraries
 RUN pip3 install \
   --no-cache-dir \
+  percy-selenium==$PERCY_VERSION \
   robotframework==$ROBOT_FRAMEWORK_VERSION \
   robotframework-browser==$BROWSER_LIBRARY_VERSION \
   robotframework-databaselibrary==$DATABASE_LIBRARY_VERSION \
