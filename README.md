@@ -31,6 +31,8 @@ The versions used are:
 * [Axe Selenium Library](https://github.com/mozilla-services/axe-selenium-python) 2.1.6
 * Firefox 114.0
 * Chromium 114.0
+* [Percy CLI](https://github.com/percy/cli)
+* [Percy Selenium Python](https://github.com/percy/percy-selenium-python)
 
 As stated by [the official GitHub project](https://github.com/robotframework/Selenium2Library), starting from version 3.0, Selenium2Library is renamed to SeleniumLibrary and this project exists mainly to help with transitioning. The Selenium2Library 3.0.0 is also the last release and for new releases, please look at the [SeleniumLibrary](https://github.com/robotframework/SeleniumLibrary) project.
 
