@@ -93,7 +93,7 @@ RUN pip3 install \
   selenium==4.9.0
 
 # Install Percy CLI
-RUN npm i @percy/cli
+RUN npm i -g @percy/cli
 
 # Gecko drivers
 RUN dnf install -y \
