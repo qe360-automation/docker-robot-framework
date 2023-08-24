@@ -92,6 +92,9 @@ RUN pip3 install \
   # https://github.com/robotframework/SeleniumLibrary/issues/1835
   selenium==4.9.0
 
+# Install Percy CLI
+RUN npm i @percy/cli
+
 # Gecko drivers
 RUN dnf install -y \
     wget \
