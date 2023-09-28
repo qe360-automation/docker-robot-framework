@@ -2,6 +2,9 @@ FROM fedora:38
 
 LABEL description Robot Framework in Docker.
 
+# By default, visual Percy tests won't run
+ENV IS_VISUAL_TEST false
+
 # Set the reports directory environment variable
 ENV ROBOT_REPORTS_DIR /opt/robotframework/reports
 
@@ -70,6 +73,9 @@ RUN dnf upgrade -y --refresh \
 RUN mv /usr/lib64/chromium-browser/chromium-browser /usr/lib64/chromium-browser/chromium-browser-original \
   && ln -sfv /opt/robotframework/bin/chromium-browser /usr/lib64/chromium-browser/chromium-browser
 
+# Tell Percy to skip downloading chromium and use the existing one
+ENV PERCY_BROWSER_EXECUTABLE="/opt/robotframework/bin/chromium-browser"
+
 # Install Robot Framework and associated libraries
 RUN pip3 install \
   --no-cache-dir \
@@ -96,6 +102,7 @@ RUN pip3 install \
 
 # Install Percy CLI
 RUN npm i -g @percy/cli
+RUN chmod -R 777 /usr/local/lib/node_modules/@percy/cli/node_modules/@percy
 
 # Gecko drivers
 RUN dnf install -y \
